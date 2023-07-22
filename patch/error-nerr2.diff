@@ -1,0 +1,10 @@
+--- error.c-	2023-07-22 20:52:58.947825982 +0900
++++ error.c	2023-07-22 20:53:19.195321055 +0900
+@@ -381,6 +381,7 @@
+ }
+ 
+ extern int sys_nerr;
++#define sys_nerr 256 /* EHWPOISON = 133 is the known max */
+ 
+ static void
+ init_syserr()

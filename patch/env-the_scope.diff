@@ -1,0 +1,11 @@
+--- env.h-	2023-07-22 20:35:34.820667800 +0900
++++ env.h	2023-07-22 20:35:43.238164836 +0900
+@@ -19,7 +19,7 @@
+     struct ENVIRON *prev;
+ } *the_env;
+ 
+-struct SCOPE {
++extern struct SCOPE {
+     struct RBasic super;
+     ID *local_tbl;
+     VALUE *local_vars;

@@ -1,0 +1,10 @@
+--- error.c-    2023-07-22 20:12:23.940274035 +0900
++++ error.c     2023-07-22 20:14:33.355233404 +0900
+@@ -429,6 +429,7 @@
+
+ #ifndef NT
+ extern int sys_nerr;
++#define sys_nerr 256 /* EHWPOISON = 133 is the known max */
+ #endif
+
+ static void

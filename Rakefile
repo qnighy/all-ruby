@@ -359,6 +359,28 @@ class RubySource
     elsif version_between('0.51', '0.76')
       patch srcdir, 'error-error'
     end
+    if version_between('0.99.4-961224', '1.0-961225')
+      patch srcdir, 'error-nerr2'
+    elsif version_between('1.0-971002', '1.6.7')
+      patch srcdir, 'error-nerr'
+    end
+    if version_between('0.64', '0.73-950413')
+      patch srcdir, 'env-the_scope'
+    end
+    if version_eq('0.73')
+      patch srcdir, 'extmake-dummy-target'
+    end
+    if version_between('1.0-971002', '1.1b3')
+      patch srcdir, 'class-mkernel-decl'
+    end
+    if version_between('0.99.4-961224', '1.1b3')
+      patch srcdir, 'object-cfixnum-decl'
+    end
+    if version_between('0.49', '0.76')
+      patch srcdir, 'range-mcomparable-decl2'
+    elsif version_between('0.95', '1.1b1')
+      patch srcdir, 'range-mcomparable-decl'
+    end
     if version_between('0.49', '0.76')
       modify_file("#{build_reldir}/#{srcdir}/io.c") {|content|
         content.gsub!(/->_gptr/, "->_IO_read_ptr")

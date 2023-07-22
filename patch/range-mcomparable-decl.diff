@@ -1,0 +1,11 @@
+--- range.c-	2023-07-22 20:21:46.655929840 +0900
++++ range.c	2023-07-22 20:21:55.170927116 +0900
+@@ -12,7 +12,7 @@
+ 
+ #include "ruby.h"
+ 
+-VALUE mComparable;
++extern VALUE mComparable;
+ static VALUE cRange;
+ extern VALUE cNumeric;
+ 
